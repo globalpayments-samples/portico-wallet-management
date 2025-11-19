@@ -56,8 +56,17 @@ func main() {
 	r.HandleFunc("/mock-mode", mockModeHandler).Methods("GET", "POST", "OPTIONS")
 	r.HandleFunc("/payment-methods", paymentMethodsHandler).Methods("GET", "POST", "OPTIONS")
 
-	// Serve static files
-	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./")))
+	// Serve static files from /static/ directory
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+
+	// Serve index.html for root path
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == "/" {
+			http.ServeFile(w, r, "./static/index.html")
+		} else {
+			http.NotFound(w, r)
+		}
+	}).Methods("GET")
 
 	// Apply CORS middleware
 	handler := c.Handler(r)

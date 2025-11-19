@@ -11,6 +11,11 @@ A secure Go-based wallet management system for storing and managing payment meth
 - **High Performance** - Efficient concurrent request handling with goroutines
 - **Type-Safe** - Strongly-typed Go structs for all operations
 
+## Recent Improvements
+
+- **Fixed Static File Routing** - Properly isolates static assets in `/static/` directory, preventing exposure of source code files and improving security
+- **Standardized JSON Field Naming** - Changed all JSON fields to snake_case (e.g., `first_name`, `street_address`, `payment_token`) for consistency with PHP and Node.js implementations
+
 ## Requirements
 
 - **Go** 1.23+ (configured for 1.23.4, works with 1.21+)
@@ -116,15 +121,15 @@ The Go implementation leverages Go's strengths:
 
 ```go
 type CustomerData struct {
-    FirstName     string `json:"firstName"`
-    LastName      string `json:"lastName"`
-    Email         string `json:"email"`
-    Phone         string `json:"phone"`
-    StreetAddress string `json:"streetAddress"`
-    City          string `json:"city"`
-    State         string `json:"state"`
-    BillingZip    string `json:"billingZip"`
-    Country       string `json:"country"`
+    FirstName     string `json:"first_name,omitempty"`
+    LastName      string `json:"last_name,omitempty"`
+    Email         string `json:"email,omitempty"`
+    Phone         string `json:"phone,omitempty"`
+    StreetAddress string `json:"street_address,omitempty"`
+    City          string `json:"city,omitempty"`
+    State         string `json:"state,omitempty"`
+    BillingZip    string `json:"billing_zip,omitempty"`
+    Country       string `json:"country,omitempty"`
 }
 
 func CreateMultiUseTokenWithCustomer(
@@ -269,18 +274,16 @@ curl -X POST http://localhost:8000/mock-mode \
 curl -X POST http://localhost:8000/payment-methods \
   -H "Content-Type: application/json" \
   -d '{
-    "paymentToken": "supt_test_4242424242424242",
+    "payment_token": "supt_test_4242424242424242",
     "cardDetails": {
       "cardType": "visa",
       "cardLast4": "4242",
       "expiryMonth": "12",
       "expiryYear": "2028"
     },
-    "customerData": {
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "email": "jane@example.com"
-    }
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email": "jane@example.com"
   }'
 ```
 
