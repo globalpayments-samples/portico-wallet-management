@@ -1,0 +1,7 @@
+{
+  "title": "Global Payments Portico Wallet Management - Go",
+  "description": "Secure wallet management system using Go and Global Payments Portico API",
+  "iconUrl": "https://globalpayments-samples.github.io/assets/img/g-symbol-dev-brand.png",
+  "tags": ["global-payments", "wallet-management", "go", "portico", "gorilla-mux"],
+  "published": false
+}
