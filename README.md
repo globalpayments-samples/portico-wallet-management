@@ -4,15 +4,14 @@ A secure multi-language wallet management system demonstrating Global Payments S
 
 ## Available Implementations
 
-| Language | Tech Stack | Port | Setup Command |
-|----------|-----------|------|---------------|
-| [PHP](/php/) | PHP 7.4+ with Composer | 8000 | `./run.sh` |
-| [Node.js](/nodejs/) | Express.js + ES6 Modules | 8000 | `./run.sh` |
-| [Java](/java/) | Jakarta EE + Tomcat 10 | 8000 | `./run.sh` |
-| [Go](/go/) | Go 1.23+ with Gorilla Mux | 8000 | `./run.sh` |
-| [.NET](/dotnet/) | ASP.NET Core 9.0 | 8000 | `./run.sh` |
 
-All implementations provide identical functionality with consistent REST API endpoints.
+## Available Implementations
+
+- [.NET Core](./dotnet/) - ([Preview](https://githubbox.com/globalpayments-samples/portico-wallet-management/tree/main/dotnet)) - ASP.NET Core web application
+- [Go](./go/) - ([Preview](https://githubbox.com/globalpayments-samples/portico-wallet-management/tree/main/go)) - Go HTTP server application
+- [Java](./java/) - ([Preview](https://githubbox.com/globalpayments-samples/portico-wallet-management/tree/main/java)) - Jakarta EE servlet-based web application
+- [Node.js](./nodejs/) - ([Preview](https://githubbox.com/globalpayments-samples/portico-wallet-management/tree/main/nodejs)) - Express.js web application
+- [PHP](./php/) - ([Preview](https://githubbox.com/globalpayments-samples/portico-wallet-management/tree/main/php)) - PHP web application
 
 ## Core Features
 
