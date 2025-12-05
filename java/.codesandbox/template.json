@@ -1,0 +1,7 @@
+{
+  "title": "Global Payments Portico Wallet Management - Java",
+  "description": "Secure wallet management system using Java and Global Payments Portico API",
+  "iconUrl": "https://globalpayments-samples.github.io/assets/img/g-symbol-dev-brand.png",
+  "tags": ["global-payments", "wallet-management", "java", "portico", "jakarta-ee"],
+  "published": false
+}

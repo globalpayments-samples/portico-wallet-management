@@ -1,0 +1,10 @@
+{
+  "name": "Portico Wallet Management - Go",
+  "image": "mcr.microsoft.com/devcontainers/go:1.23-bookworm",
+  "forwardPorts": [8000],
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go"]
+    }
+  }
+}
