@@ -409,7 +409,8 @@ func createMultiUseTokenWithCustomer(paymentToken string, customerData *Customer
 	}
 
 	if result.MultiUseToken == "" {
-		result.MultiUseToken = paymentToken // fallback to original token
+		// A single-use token expires, so storing it as the saved card would break every later charge
+		return nil, fmt.Errorf("multi-use token creation failed: the gateway approved but returned no token")
 	}
 
 	return result, nil
