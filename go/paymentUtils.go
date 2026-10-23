@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -32,6 +33,9 @@ func initializeSDK() error {
 
 	return api.ConfigureService(config, "default")
 }
+
+// Returned when the gateway could not turn the single-use token into a multi-use one
+var errTokenizationFailed = errors.New("multi-use token creation failed")
 
 // Create a new payment method (stored payment token)
 func createPaymentMethod(req PaymentMethodRequest) (*PaymentMethod, error) {
@@ -71,7 +75,7 @@ func createPaymentMethodFromToken(req PaymentMethodRequest, paymentMethodID stri
 	var err error
 	finalToken := req.PaymentToken
 
-	if mockModeEnabled || os.Getenv("SECRET_API_KEY") == "" {
+	if mockModeEnabled {
 		// Use mock data
 		brand := determineCardBrandFromType(req.CardDetails.CardType)
 		multiUseTokenResult = &MultiUseTokenResult{
@@ -88,21 +92,10 @@ func createPaymentMethodFromToken(req PaymentMethodRequest, paymentMethodID stri
 		multiUseTokenResult, err = createMultiUseTokenWithCustomer(req.PaymentToken, customerData, req.CardDetails)
 		if err != nil {
 			log.Printf("Multi-use token creation error: %v", err)
-			// Fall back to mock mode if token creation fails
-			brand := determineCardBrandFromType(req.CardDetails.CardType)
-			multiUseTokenResult = &MultiUseTokenResult{
-				MultiUseToken: req.PaymentToken,
-				Brand:         brand,
-				Last4:         req.CardDetails.CardLast4,
-				ExpiryMonth:   req.CardDetails.ExpiryMonth,
-				ExpiryYear:    req.CardDetails.ExpiryYear,
-				CustomerData:  customerData,
-			}
-			log.Printf("Falling back to mock mode due to token creation failure")
-		} else {
-			finalToken = multiUseTokenResult.MultiUseToken
-			log.Printf("Created multi-use token successfully")
+			return nil, fmt.Errorf("%w: %v", errTokenizationFailed, err)
 		}
+		finalToken = multiUseTokenResult.MultiUseToken
+		log.Printf("Created multi-use token successfully")
 	}
 
 	// Set nickname or default
