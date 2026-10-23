@@ -100,7 +100,7 @@ No endpoint has authentication. CORS allows `*`, and tokens and customer data si
 ## How to Run
 
 ```bash
-cd php && ./run.sh       # PHP: composer install, php -S 0.0.0.0:$PORT router.php (:8000)
+cd php && ./run.sh       # PHP: composer install, loopback by default, HOST=0.0.0.0 to expose (:8000)
 cd nodejs && ./run.sh    # Node.js: npm install, npm start (:8000)
 cd java && ./run.sh      # Java: mvn clean package cargo:run (:8000 from pom.xml)
 cd dotnet && ./run.sh    # .NET: dotnet restore, dotnet run (:8000)

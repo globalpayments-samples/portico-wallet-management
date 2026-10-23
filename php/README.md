@@ -59,7 +59,7 @@ The server will start on `http://localhost:8000`
 Alternatively, manually start the server:
 
 ```bash
-php -S 0.0.0.0:8000 router.php
+./run.sh
 ```
 
 ### 5. Access the Web Interface
