@@ -50,7 +50,7 @@
 
 ### Shared
 - [`docker-compose.yml`](docker-compose.yml): six services plus a `tests` profile. It is broken as committed: it defines a `python` service with no `python/` folder, and the `tests` service builds `Dockerfile.tests`, which copies `tests/` and `playwright.config.js`. Neither exists.
-- [`index.html`](index.html): leftover template, not served by any backend. Its form posts to `/process-payment.php` and it has a broken stylesheet URL (`styles.csscss/styles.css`)
+- [`index.html`](index.html): leftover template, not served by any backend. Its form posts to `/process-payment.php`
 - [`docker-run.sh`](docker-run.sh), [`Dockerfile.tests`](Dockerfile.tests), [`package.json`](package.json) (root script runs `node nodejs/server.js`)
 
 ## API Surface

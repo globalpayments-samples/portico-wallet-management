@@ -331,9 +331,9 @@ dotnet test
 
 ## Support
 
-- **Global Payments Documentation:** [developer.globalpay.com/docs](https://developer.globalpay.com/docs)
+- **Global Payments Documentation:** [developer.globalpayments.com](https://developer.globalpayments.com/)
 - **.NET SDK Documentation:** [github.com/globalpayments/dotnet-sdk](https://github.com/globalpayments/dotnet-sdk)
-- **API Reference:** [developer.globalpay.com/api](https://developer.globalpay.com/api)
+- **API Reference:** [developer.globalpayments.com/api/references-overview](https://developer.globalpayments.com/api/references-overview)
 
 ## License
 
