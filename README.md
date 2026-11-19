@@ -334,8 +334,8 @@ This is a demonstration application. Before deploying to production:
 
 ## Support & Documentation
 
-- **Global Payments Documentation:** [developer.globalpay.com/docs](https://developer.globalpay.com/docs)
-- **API Reference:** [developer.globalpay.com/api](https://developer.globalpay.com/api)
+- **Global Payments Documentation:** [developer.globalpayments.com](https://developer.globalpayments.com/)
+- **API Reference:** [developer.globalpayments.com/api/references-overview](https://developer.globalpayments.com/api/references-overview)
 - **SDK Documentation:** Check each language implementation's README
 
 ## License

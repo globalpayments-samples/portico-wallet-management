@@ -305,9 +305,9 @@ curl -X POST http://localhost:8000/payment-methods \
 
 ## Support
 
-- **Global Payments Documentation:** [developer.globalpay.com/docs](https://developer.globalpay.com/docs)
+- **Global Payments Documentation:** [developer.globalpayments.com](https://developer.globalpayments.com/)
 - **Go SDK Documentation:** [github.com/globalpayments/go-sdk](https://github.com/globalpayments/go-sdk)
-- **API Reference:** [developer.globalpay.com/api](https://developer.globalpay.com/api)
+- **API Reference:** [developer.globalpayments.com/api/references-overview](https://developer.globalpayments.com/api/references-overview)
 
 ## License
 

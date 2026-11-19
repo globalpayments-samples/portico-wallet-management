@@ -557,9 +557,9 @@ Use the included web interface at `http://localhost:8000` for comprehensive test
 
 ## Support
 
-- **Global Payments Documentation:** [developer.globalpay.com/docs](https://developer.globalpay.com/docs)
+- **Global Payments Documentation:** [developer.globalpayments.com](https://developer.globalpayments.com/)
 - **PHP SDK Documentation:** [github.com/globalpayments/php-sdk](https://github.com/globalpayments/php-sdk)
-- **API Reference:** [developer.globalpay.com/api](https://developer.globalpay.com/api)
+- **API Reference:** [developer.globalpayments.com/api/references-overview](https://developer.globalpayments.com/api/references-overview)
 
 ## License
 
