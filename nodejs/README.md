@@ -374,8 +374,8 @@ For production, update the `serviceUrl` to the production endpoint.
 **Issue:** "Node.js version too old"
 ```bash
 # Update Node.js
-nvm install 18
-nvm use 18
+nvm install 24
+nvm use 24
 # Or download from nodejs.org
 ```
 
