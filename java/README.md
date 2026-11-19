@@ -13,7 +13,7 @@ A secure Java-based wallet management system for storing and managing payment me
 
 ## Requirements
 
-- **Java** 23 or higher (configured for Java 23, works with 11+)
+- **Java** 21 or higher (configured for Java 21)
 - **Maven** 3.6 or higher
 
 ## Setup
@@ -151,8 +151,8 @@ Key settings in `pom.xml`:
 
 ```xml
 <properties>
-    <maven.compiler.source>23</maven.compiler.source>
-    <maven.compiler.target>23</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
 </properties>
 
 <dependencies>
