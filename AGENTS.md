@@ -144,5 +144,5 @@ All five backends are supposed to behave the same. Apply a change to every langu
 - **PHP**: `globalpayments/php-sdk` ^13.1, `vlucas/phpdotenv` ^5.5
 - **Node.js**: `globalpayments-api` ^3.10.6, `express` ^4.18.2
 - **Java**: `globalpayments-sdk` (com.heartlandpaymentsystems) 14.2.20, Jakarta Servlet 5.0.0
-- **.NET**: `GlobalPayments.Api` 9.0.16, `DotEnv.Net` 3.2.1, net9.0
+- **.NET**: `GlobalPayments.Api` 9.0.16, `DotEnv.Net` 3.2.1, net10.0
 - **Go**: `github.com/globalpayments/go-sdk` v1.1.3, `gorilla/mux` v1.8.1, go 1.23.4

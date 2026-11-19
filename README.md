@@ -281,7 +281,7 @@ This wallet management system is ideal for:
 - **Dependencies:** globalpayments/go-sdk, gorilla/mux
 
 ### .NET Implementation
-- **Framework:** ASP.NET Core 9.0
+- **Framework:** ASP.NET Core 10.0
 - **Best For:** Microsoft ecosystems, Azure deployments
 - **Dependencies:** GlobalPayments.Api, DotEnv.Net
 
