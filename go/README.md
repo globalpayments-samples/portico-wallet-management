@@ -18,7 +18,7 @@ A secure Go-based wallet management system for storing and managing payment meth
 
 ## Requirements
 
-- **Go** 1.23+ (configured for 1.23.4, works with 1.21+)
+- **Go** 1.26+ (configured for 1.26)
 - **Go Modules** - Dependency management
 
 ## Setup
@@ -168,14 +168,14 @@ Key dependencies in `go.mod`:
 ```go
 module github.com/globalpayments/card-payments-go
 
-go 1.23.4
+go 1.26
 
 require (
     github.com/globalpayments/go-sdk v1.1.3
     github.com/google/uuid v1.6.0
     github.com/gorilla/mux v1.8.1
     github.com/joho/godotenv v1.5.1
-    github.com/rs/cors v1.10.1
+    github.com/rs/cors v1.11.0
 )
 ```
 
@@ -215,7 +215,7 @@ GOOS=darwin GOARCH=amd64 go build -o wallet-macos
 ```bash
 # Update Go
 # Download from https://golang.org/dl/
-go version  # Should be 1.21+
+go version  # Should be 1.26+
 ```
 
 **Issue:** "Module download fails"

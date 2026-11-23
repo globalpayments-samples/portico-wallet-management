@@ -1,6 +1,6 @@
 # Wallet Management - .NET Implementation
 
-A secure ASP.NET Core wallet management system for storing and managing payment methods using Global Payments multi-use tokens. Built with .NET 9.0, this implementation demonstrates wallet management capabilities without processing actual payments.
+A secure ASP.NET Core wallet management system for storing and managing payment methods using Global Payments multi-use tokens. Built with .NET 10.0, this implementation demonstrates wallet management capabilities without processing actual payments.
 
 ## Features
 
@@ -169,7 +169,7 @@ Key settings in `dotnet.csproj`:
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -202,13 +202,13 @@ cd publish
 Create a `Dockerfile`:
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY . .
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app .
 EXPOSE 8000
