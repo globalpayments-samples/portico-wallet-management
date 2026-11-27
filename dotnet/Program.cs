@@ -239,7 +239,9 @@ public class Program
                 // Check if this is an edit operation (has 'id' field)
                 if (!string.IsNullOrEmpty(data.Id))
                 {
-                    return await HandleEditPaymentMethodPhpStyle(data);
+                    using var body = JsonDocument.Parse(json);
+                    var nicknameSent = body.RootElement.TryGetProperty("nickname", out _);
+                    return await HandleEditPaymentMethodPhpStyle(data, nicknameSent);
                 }
 
                 // Create new payment method using payment_token from GP PaymentForm
@@ -282,7 +284,7 @@ public class Program
 
     }
 
-    private static async Task<IResult> HandleEditPaymentMethodPhpStyle(PaymentMethodData data)
+    private static async Task<IResult> HandleEditPaymentMethodPhpStyle(PaymentMethodData data, bool nicknameSent)
     {
         try
         {
@@ -302,7 +304,7 @@ public class Program
             // Update the payment method (only editable fields)
             var editData = new PaymentMethodEditData
             {
-                Nickname = data.Nickname,
+                Nickname = nicknameSent ? data.Nickname : existingMethod.Nickname,
                 IsDefault = data.IsDefault
             };
 
