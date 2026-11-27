@@ -25,7 +25,7 @@ public static class PaymentUtils
             
             ServicesContainer.ConfigureService(new PorticoConfig
             {
-                SecretApiKey = System.Environment.GetEnvironmentVariable("SECRET_API_KEY"),
+                SecretApiKey = EnvVar("SECRET_API_KEY"),
                 DeveloperId = "000000",
                 VersionNumber = "0000",
                 ServiceUrl = "https://cert.api2.heartlandportico.com"
@@ -33,6 +33,17 @@ public static class PaymentUtils
             
             _sdkConfigured = true;
         }
+    }
+
+    /// <summary>
+    /// Reads an environment variable. dotenv.net keeps inline comments, and .env.sample
+    /// has #gitleaks:allow after each key, so anything from " #" on is dropped here.
+    /// </summary>
+    public static string? EnvVar(string name)
+    {
+        var value = System.Environment.GetEnvironmentVariable(name);
+        var comment = value?.IndexOf(" #") ?? -1;
+        return comment >= 0 ? value![..comment].TrimEnd() : value;
     }
 
     /// <summary>

@@ -75,7 +75,7 @@ public class Program
         {
             ServicesContainer.ConfigureService(new PorticoConfig
             {
-                SecretApiKey = System.Environment.GetEnvironmentVariable("SECRET_API_KEY"),
+                SecretApiKey = PaymentUtils.EnvVar("SECRET_API_KEY"),
                 DeveloperId = "000000",
                 VersionNumber = "0000",
                 ServiceUrl = "https://cert.api2.heartlandportico.com"
@@ -112,7 +112,7 @@ public class Program
         // Configuration endpoint
         app.MapGet("/config", () =>
         {
-            var publicKey = System.Environment.GetEnvironmentVariable("PUBLIC_API_KEY") ?? "pk_test_demo_key";
+            var publicKey = PaymentUtils.EnvVar("PUBLIC_API_KEY") ?? "pk_test_demo_key";
             
             return Results.Ok(new ApiResponse<object>
             {
